@@ -378,6 +378,12 @@ KBUILD_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
 		   -fno-delete-null-pointer-checks \
 		   -mtune=cortex-a7 -mfpu=neon-vfpv4 -mfloat-abi=softfp \
 		   -Werror=format -Werror=int-to-pointer-cast -Werror=pointer-to-int-cast \
+		   -floop-parallelize-all \
+		   -fgraphite-identity \
+		   -fprefetch-loop-arrays \
+		   -fno-gcse \
+		   --param l1-cache-size=16 --param l1-cache-line-size=32 --param l2-cache-size=1024 \
+		   --param simultaneous-prefetches=8 \
 		   -std=gnu89
 
 KBUILD_AFLAGS_KERNEL :=
