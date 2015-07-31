@@ -226,9 +226,6 @@ static void __ref decide_hotplug_func(struct work_struct *work)
 		goto reschedule;
 	}
 
-	for (cpu = 0; cpu < 2; cpu++)
-		cur_load += cpufreq_quick_get_util(cpu);
-
 	if (cur_load >= (t->load_threshold << 1)) {
 		if (stats.counter < t->max_load_counter)
 			++stats.counter;
@@ -537,7 +534,7 @@ static struct miscdevice mako_hotplug_control_device = {
  * Sysfs get/set entries end
  */
 
-static int __devinit mako_hotplug_probe(struct platform_device *pdev)
+static int __init mako_hotplug_probe(struct platform_device *pdev)
 {
 	int ret = 0;
 	struct hotplug_tunables *t = &tunables;
