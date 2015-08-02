@@ -16,7 +16,7 @@
 #include <linux/kernel.h>
 #include <linux/list.h>
 #include <linux/mutex.h>
-#include <linux/quickwakeup.h>
+#include "quickwakeup.h"
 
 static LIST_HEAD(qw_head);
 static DEFINE_MUTEX(list_lock);
