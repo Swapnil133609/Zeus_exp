@@ -1071,8 +1071,6 @@ static void dbs_check_cpu(struct cpu_dbs_info_s *this_dbs_info)
 		}
 	}
 
-	cpufreq_notify_utilization(policy, load_at_max_freq);
-
 	//gboost
 	if (g_count > 30) {
 
