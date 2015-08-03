@@ -142,6 +142,12 @@ config CPU_FREQ_DEFAULT_GOV_INTELLIDEMAND
         help
           Use the CPUFreq governor 'intellidemand' as default
 
+config CPU_FREQ_DEFAULT_GOV_PEGASUSQ
+        bool "pegasusq"
+        select CPU_FREQ_GOV_PEGASUSQ
+        help
+          Use the CPUFreq governor 'pegasusq' as default
+
 endchoice
 
 config CPU_FREQ_GOV_PERFORMANCE
@@ -292,6 +298,9 @@ config CPU_FREQ_GOV_INTELLIDEMAND
 	
 	  To compile this driver as a module, choose M here: the
 	  module will be called cpufreq_ondemand.
+
+config CPU_FREQ_GOV_PEGASUSQ
+	tristate "'pegasusq' cpufreq policy governor"	
 
 config GENERIC_CPUFREQ_CPU0
 	tristate "Generic CPU0 cpufreq driver"
