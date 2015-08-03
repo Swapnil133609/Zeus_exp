@@ -534,7 +534,7 @@ static struct miscdevice mako_hotplug_control_device = {
  * Sysfs get/set entries end
  */
 
-static int __init mako_hotplug_probe(struct platform_device *pdev)
+static int __refdata mako_hotplug_probe(struct platform_device *pdev)
 {
 	int ret = 0;
 	struct hotplug_tunables *t = &tunables;
